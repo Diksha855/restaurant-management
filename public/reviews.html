@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Review List with Actions</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      padding: 2rem;
+      margin: 0;
+    }
+
+    .review-list {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .review {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .reviewer-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .review-date {
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .review-rating {
+      color: #f5b50a;
+      margin: 0.2rem 0;
+    }
+
+    .review-text {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .review-actions {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .action-btn {
+      padding: 0.4rem 0.8rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s ease;
+    }
+
+    .update-btn {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .update-btn:hover {
+      background-color: #43a047;
+    }
+
+    .delete-btn {
+      background-color: #e53935;
+      color: white;
+    }
+
+    .delete-btn:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <div class="review-list">
+
+    <div class="review">
+      <div class="review-header">
+        <div class="reviewer-name">Ananya Deshmukh</div>
+        <div class="review-date">July 10, 2025</div>
+      </div>
+      <div class="review-rating">★★★★☆</div>
+      <div class="review-text">
+        The food was delightful and the ambiance was perfect for a quiet evening. Highly recommend the biryani!
+      </div>
+      <div class="review-actions">
+        <button class="action-btn update-btn">Update</button>
+        <button class="action-btn delete-btn">Delete</button>
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="review-header">
+        <div class="reviewer-name">Kunal Verma</div>
+        <div class="review-date">July 8, 2025</div>
+      </div>
+      <div class="review-rating">★★★☆☆</div>
+      <div class="review-text">
+        Service was a bit slow during peak hours, but the food made up for it. Great portion sizes.
+      </div>
+      <div class="review-actions">
+        <button class="action-btn update-btn">Update</button>
+        <button class="action-btn delete-btn">Delete</button>
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="review-header">
+        <div class="reviewer-name">Sara Khan</div>
+        <div class="review-date">July 5, 2025</div>
+      </div>
+      <div class="review-rating">★★★★★</div>
+      <div class="review-text">
+        Absolutely loved the desserts! Will come back just for the molten chocolate cake.
+      </div>
+      <div class="review-actions">
+        <button class="action-btn update-btn">Update</button>
+        <button class="action-btn delete-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Reviews
+    function addReview() {
+      const input = document.getElementById('reviewInput');
+      if (!input.value.trim()) return;
+      const li = document.createElement('li');
+      li.textContent = input.value;
+      document.getElementById('reviewList').appendChild(li);
+      input.value = '';
+    }
+  </script>
+</body>
+</html>

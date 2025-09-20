@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Table Booking</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px gray;
+    }
+
+    input {
+      width: 95%;
+      padding: 8px;
+      margin: 6px 0;
+    }
+
+    button {
+        width: 100%;
+        padding: 8px;
+        margin: 6px 0;
+        background-color: rgb(25, 179, 63);
+    }
+
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #333;
+      color: white;
+    }
+
+    .btn {
+      padding: 4px 8px;
+      margin: 2px;
+    }
+
+    .edit {
+      background-color: rgb(25, 179, 63);
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+
+    .delete {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Table Booking</h2>
+
+  <form id="bookingForm">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="number" id="guests" placeholder="No. of Guests" required>
+    <input type="date" id="date" required>
+    <input type="time" id="time" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <table id="bookingTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Guests</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  
+  <script>
+    const form = document.getElementById("bookingForm");
+    const tableBody = document.querySelector("#bookingTable tbody");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let name = document.getElementById("name").value;
+      let guests = document.getElementById("guests").value;
+      let date = document.getElementById("date").value;
+      let time = document.getElementById("time").value;
+
+      let newRow = tableBody.insertRow();
+
+      newRow.insertCell(0).textContent = name;
+      newRow.insertCell(1).textContent = guests;
+      newRow.insertCell(2).textContent = date;
+      newRow.insertCell(3).textContent = time;
+
+      let actionCell = newRow.insertCell(4);
+      actionCell.innerHTML = `
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+      `;
+
+      // Delete functionality
+      actionCell.querySelector(".delete").addEventListener("click", function() {
+        tableBody.removeChild(newRow);
+      });
+
+      // Edit functionality
+      actionCell.querySelector(".edit").addEventListener("click", function() {
+        document.getElementById("name").value = newRow.cells[0].textContent;
+        document.getElementById("guests").value = newRow.cells[1].textContent;
+        document.getElementById("date").value = newRow.cells[2].textContent;
+        document.getElementById("time").value = newRow.cells[3].textContent;
+        
+        tableBody.removeChild(newRow); // remove row so it can be re-added after editing
+      });
+
+      form.reset();
+    });
+</script>
+
+</body>
+</html>

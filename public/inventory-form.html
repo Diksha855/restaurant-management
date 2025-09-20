@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      padding: 30px;
+    }
+
+    .inventory-form-container {
+      max-width: 500px;
+      background: #fff;
+      margin: auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, select:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"] {
+      background-color: #28a745;
+      color: white;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #218838;
+    }
+
+    button[type="reset"] {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    button[type="reset"]:hover {
+      background-color: #c82333;
+    }
+  </style>
+</head>
+<body>
+  <div class="inventory-form-container">
+    <h2>Inventory Entry Form</h2>
+    <form id="inventoryForm">
+      <div class="form-group">
+        <label for="itemName">Item Name</label>
+        <input type="text" id="itemName" name="itemName" required />
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" required />
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select id="category" name="category" required>
+          <option value="">Select Category</option>
+          <option value="Veggies">Veggies</option>
+          <option value="Groceries">Groceries</option>
+          <option value="Drinks">Drinks</option>
+          <option value="Utensils">Utensils</option>
+          <option value="Other-Items">Othe-Items</option>
+          <option value="Machines">Machines</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Unit Price (₹)</label>
+        <input type="number" id="price" name="price" step="1" required />
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date of Entry</label>
+        <input type="date" id="date" name="date" required />
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit">Submit</button>
+        <button type="reset">Clear</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

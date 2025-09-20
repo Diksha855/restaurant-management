@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Restaurant Billing Page</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #009879;
+      color: white;
+    }
+
+    input[type="number"] {
+      width: 60px;
+      padding: 4px;
+      text-align: center;
+    }
+
+    .total {
+      font-size: 1.2rem;
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #009879;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #007e65;
+    }
+
+    .actions {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Restaurant Billing</h2>
+    <table id="billTable">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price (₹)</th>
+          <th>Quantity</th>
+          <th>Subtotal (₹)</th>
+        </tr>
+      </thead>
+      <tbody id="billBody">
+        <tr>
+          <td>Paneer Tikka</td>
+          <td class="price">180</td>
+          <td><input type="number" min="0" value="0"></td>
+          <td class="subtotal">0</td>
+        </tr>
+        <tr>
+          <td>Veg Biryani</td>
+          <td class="price">150</td>
+          <td><input type="number" min="0" value="0"></td>
+          <td class="subtotal">0</td>
+        </tr>
+        <tr>
+          <td>Butter Naan</td>
+          <td class="price">40</td>
+          <td><input type="number" min="0" value="0"></td>
+          <td class="subtotal">0</td>
+        </tr>
+        <tr>
+          <td>Gulab Jamun</td>
+          <td class="price">50</td>
+          <td><input type="number" min="0" value="0"></td>
+          <td class="subtotal">0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="total" id="totalAmount">Total: ₹0</div>
+
+    <div class="actions">
+      <button onclick="generateBill()">Generate Bill</button>
+      <button onclick="window.print()">Print</button>
+    </div>
+  </div>
+  
+</body>
+</html>

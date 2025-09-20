@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Staff Info Table</title>
+  <style>
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 20px;
+}
+
+.table-container {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  background-color: #007bff;
+  color: white;
+  text-align: left;
+  padding: 12px;
+}
+
+tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.9em;
+}
+
+.status.active {
+  background-color: #28a745;
+}
+
+.status.inactive {
+  background-color: #dc3545;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85em;
+}
+
+.update-btn {
+  background-color: #ffc107;
+  color: black;
+  margin-right: 5px;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+  <div class="table-container">
+    <h2>Staff Information</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Department</th>
+          <th>Contact</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>Amit Sharma</td>
+          <td>Manager</td>
+          <td>Sales</td>
+          <td>amit@example.com</td>
+          <td><span class="status active">Active</span></td>
+          <td>
+            <button class="update-btn" onclick="updateRow(this)">Update</button>
+            <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>Priya Desai</td>
+          <td>Chef</td>
+          <td>Kitchen</td>
+          <td>priya@example.com</td>
+          <td><span class="status inactive">On Leave</span></td>
+          <td>
+            <button class="update-btn" onclick="updateRow(this)">Update</button>
+            <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>003</td>
+          <td>Rahul Mehta</td>
+          <td>Waiter</td>
+          <td>Service</td>
+          <td>rahul@example.com</td>
+          <td><span class="status active">Active</span></td>
+          <td>
+            <button class="update-btn" onclick="updateRow(this)">Update</button>
+            <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

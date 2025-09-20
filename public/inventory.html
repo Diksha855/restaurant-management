@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inventory Lists</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    .header {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100% - 80px);
+    }
+
+    .sidebar {
+      width: 190px;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      padding: 1rem;
+    }
+
+    .sidebar h2:hover {
+      padding: 1rem;
+      background-color: #4CAF50;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .content {
+      flex: 1;
+      padding: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 2px solid #ededed;
+      box-shadow: 0 0 10px #c6c6c6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>INVENTORY LISTS</h1>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <h2><a href="veggies.html" target="iframe_a">Veggies</a></h2>
+      <h2><a href="groceries.html" target="iframe_a">Groceries</a></h2>
+      <h2><a href="drinks.html" target="iframe_a">Drinks</a></h2>
+      <h2><a href="utensiles.html" target="iframe_a">Utensiles</a></h2>
+      <h2><a href="machines.html" target="iframe_a">Machines</a></h2>
+      <h2><a href="other-items.html" target="iframe_a">Other-Items</a></h2>
+    </div>
+
+    <div class="content">
+      <iframe src="veggies.html" name="iframe_a"></iframe>
+    </div>
+  </div>
+
+</body>
+</html>

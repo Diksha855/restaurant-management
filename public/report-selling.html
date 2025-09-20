@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Report & Selling Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 1rem;
+      font-family: Arial, sans-serif;
+      background-color: #f8fafc;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .dashboard-cards {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      flex: 1;
+      background-color: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .charts-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .chart-container {
+      flex: 1;
+      min-width: 300px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .small-chart {
+      max-width: 500px;
+    }
+
+
+    canvas {
+      width: 100% !important;
+      height: auto !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dashboard Reports -->
+  <div id="dashboard" class="section active">
+    <div class="dashboard-cards">
+      <div class="card">
+        <h3>Total Orders: <span>1245</span></h3>
+      </div>
+      <div class="card">
+        <h3>Total Revenue: <span>$23,450</span></h3>
+      </div>
+      <div class="card">
+        <h3>Total Customers: <span>890</span></h3>
+      </div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-container">
+        <canvas id="salesChart"></canvas>
+      </div>
+      <div class="chart-container small-chart">
+        <canvas id="dishesChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sales Chart
+    new Chart(document.getElementById('salesChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Sales ($)',
+          data: [3000, 3200, 2500, 4000, 4500, 5000, 4700],
+          backgroundColor: '#3b82f6'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Weekly Sales Overview',
+            font: { size: 18 }
+          }
+        }
+      }
+    });
+
+    // Dishes Chart
+    new Chart(document.getElementById('dishesChart'), {
+      type: 'pie',
+      data: {
+        labels: ['Pizza', 'Burger', 'Pasta', 'Sushi', 'Salad'],
+        datasets: [{
+          data: [30, 20, 25, 15, 10],
+          backgroundColor: ['#f87171', '#60a5fa', '#34d399', '#fbbf24', '#a78bfa']
+        }]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Top Selling Dishes',
+            font: { size: 18 }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant Menu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    .header {
+      background-color: #3b82f6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100% - 80px);
+    }
+
+    .sidebar {
+      width: 190px;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      padding: 1rem;
+    }
+
+    .sidebar h2:hover {
+      padding: 1rem;
+      background-color: #4CAF50;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .content {
+      flex: 1;
+      padding: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 2px solid #ededed;
+      box-shadow: 0 0 10px #c6c6c6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Restaurant Menu</h1>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <h2><a href="starter1.html" target="iframe_a">STARTERS</a></h2>
+      <h2><a href="main-course1.html" target="iframe_a">MAIN COURSES</a></h2>
+      <h2><a href="desserts1.html" target="iframe_a">DESSERTS</a></h2>
+      <h2><a href="drinks1.html" target="iframe_a">DRINKS</a></h2>
+    </div>
+
+    <div class="content">
+      <iframe src="starter1.html" name="iframe_a"></iframe>
+    </div>
+  </div>
+
+</body>
+</html>
